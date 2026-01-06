@@ -1,6 +1,6 @@
 
 import React, { useState, useMemo } from 'react';
-import { MARKET_STATUS_DATA, MarketStatItem } from '../data/marketStatusData.ts';
+import { MARKET_STATUS_DATA } from '../data/marketStatusData';
 import { 
   PieChart, Pie, Cell, ResponsiveContainer, 
   Tooltip as ReTooltip 
@@ -239,7 +239,7 @@ const MarketStats: React.FC = () => {
                         <span className="font-black text-slate-700 text-[11px]">€{item.patrimonio.toLocaleString()}</span>
                       </td>
                       <td className="px-4 py-4">
-                        <span className="font-bold text-slate-600 text-[10px]">{formatNumber(item.aderenti)}</span>
+                        <span className="font-bold text-slate-600 text-[10px]">{new Intl.NumberFormat('it-IT', { notation: 'compact' }).format(item.aderenti)}</span>
                       </td>
                       <td className="px-4 py-4 text-center">
                         <span className={`px-2 py-0.5 rounded font-black text-[9px] border ${item.iscMedio > 2.4 ? 'text-red-600 bg-red-50 border-red-100' : item.iscMedio < 0.5 ? 'text-blue-600 bg-blue-50 border-blue-100' : 'text-emerald-600 bg-emerald-50 border-emerald-100'}`}>
@@ -294,7 +294,7 @@ const MarketStats: React.FC = () => {
                       <div className="grid grid-cols-2 gap-4">
                         <div className="bg-white p-3 rounded-xl border border-slate-100 text-center">
                           <p className="text-[7px] font-black text-slate-400 uppercase">Forza Sociale</p>
-                          <p className="text-[11px] font-black text-slate-900">{formatNumber(item.aderenti)}</p>
+                          <p className="text-[11px] font-black text-slate-900">{new Intl.NumberFormat('it-IT', { notation: 'compact' }).format(item.aderenti)}</p>
                         </div>
                         <div className="bg-white p-3 rounded-xl border border-slate-100 text-center">
                           <p className="text-[7px] font-black text-slate-400 uppercase">ISC Medio</p>

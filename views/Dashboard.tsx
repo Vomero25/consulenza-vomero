@@ -1,7 +1,7 @@
 
 import React, { useMemo } from 'react';
-import { PENSION_DATA } from '../data/pensionData.ts';
-import { MARKET_STATUS_DATA } from '../data/marketStatusData.ts';
+import { PENSION_DATA } from '../data/pensionData';
+import { MARKET_STATUS_DATA } from '../data/marketStatusData';
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar, Cell } from 'recharts';
 import { ShieldCheck, TrendingUp, Users, Target, Zap, ArrowRight, Briefcase } from 'lucide-react';
 import { NavLink } from 'react-router-dom';

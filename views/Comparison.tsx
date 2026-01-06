@@ -1,7 +1,7 @@
 
 import React, { useState, useMemo } from 'react';
-import { PENSION_DATA } from '../data/pensionData.ts';
-import { PensionType, LineCategory, PensionLine } from '../types.ts';
+import { PENSION_DATA } from '../data/pensionData';
+import { PensionType, LineCategory, PensionLine } from '../types';
 import { 
   ArrowUpDown, Zap, TrendingUp, Search, 
   CheckCircle2, AlertCircle, Info, ShieldCheck, Target

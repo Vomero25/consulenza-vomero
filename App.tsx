@@ -1,11 +1,11 @@
 
 import React from 'react';
 import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
-import Dashboard from './views/Dashboard.tsx';
-import Comparison from './views/Comparison.tsx';
-import Bilancio2026 from './views/Bilancio2026.tsx';
-import MarketStats from './views/MarketStats.tsx';
-import FiscalCalculator from './views/FiscalCalculator.tsx';
+import Dashboard from './views/Dashboard';
+import Comparison from './views/Comparison';
+import Bilancio2026 from './views/Bilancio2026';
+import MarketStats from './views/MarketStats';
+import FiscalCalculator from './views/FiscalCalculator';
 
 const navItems = [
   { path: '/', label: 'Dashboard', icon: '🏠' },
