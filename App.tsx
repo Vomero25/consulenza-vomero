@@ -16,7 +16,7 @@ const menuItems = [
   { path: '/assistant', label: 'AI Advisor', icon: '🤖' },
 ];
 
-const NavigationSidebar = () => (
+const SidebarLayout = () => (
   <aside className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
     <div className="mb-12">
       <div className="flex items-center gap-2 mb-2">
@@ -55,7 +55,7 @@ const NavigationSidebar = () => (
   </aside>
 );
 
-const MobileBottomNav = () => (
+const MobileNavLayout = () => (
   <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-t border-slate-800 flex justify-around items-center px-2 py-4 z-50 shadow-2xl overflow-x-auto no-scrollbar">
     {menuItems.map((item) => (
       <NavLink
@@ -78,7 +78,7 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <div className="flex flex-col lg:flex-row min-h-screen bg-slate-50 selection:bg-blue-600 selection:text-white">
-        <NavigationSidebar />
+        <SidebarLayout />
         <main className="flex-1 p-4 lg:p-12 lg:ml-72 mb-24 lg:mb-0 max-w-7xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -89,7 +89,7 @@ const App: React.FC = () => {
             <Route path="/assistant" element={<Assistant />} />
           </Routes>
         </main>
-        <MobileBottomNav />
+        <MobileNavLayout />
       </div>
     </HashRouter>
   );

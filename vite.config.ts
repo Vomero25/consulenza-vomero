@@ -15,8 +15,5 @@ export default defineConfig({
         manualChunks: undefined
       }
     }
-  },
-  server: {
-    port: 3000
   }
 });
