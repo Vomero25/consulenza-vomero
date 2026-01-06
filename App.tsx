@@ -7,10 +7,7 @@ import MarketStats from './views/MarketStats';
 import FiscalCalculator from './views/FiscalCalculator';
 import Assistant from './views/Assistant';
 
-/**
- * CONFIGURAZIONE MENU
- */
-const navItems = [
+const menuItems = [
   { path: '/', label: 'Dashboard', icon: '🏠' },
   { path: '/market-stats', label: 'Mercato', icon: '📈' },
   { path: '/comparison', label: 'Confronto', icon: '⚖️' },
@@ -19,12 +16,8 @@ const navItems = [
   { path: '/assistant', label: 'AI Advisor', icon: '🤖' },
 ];
 
-/**
- * COMPONENTE SIDEBAR DESKTOP (INLINE)
- * Inclusa direttamente per prevenire errori di build su Vercel.
- */
-const DesktopSidebar: React.FC = () => (
-  <div className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
+const NavigationSidebar = () => (
+  <aside className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
     <div className="mb-12">
       <div className="flex items-center gap-2 mb-2">
         <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-black text-white italic">V</div>
@@ -33,7 +26,7 @@ const DesktopSidebar: React.FC = () => (
       <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em]">Advanced Pension Advisor</p>
     </div>
     <nav className="flex-1 space-y-2 overflow-y-auto no-scrollbar">
-      {navItems.map((item) => (
+      {menuItems.map((item) => (
         <NavLink
           key={item.path}
           to={item.path}
@@ -59,15 +52,12 @@ const DesktopSidebar: React.FC = () => (
         </div>
       </div>
     </div>
-  </div>
+  </aside>
 );
 
-/**
- * COMPONENTE NAVIGAZIONE MOBILE (INLINE)
- */
-const MobileBottomNav: React.FC = () => (
+const MobileBottomNav = () => (
   <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-t border-slate-800 flex justify-around items-center px-2 py-4 z-50 shadow-2xl overflow-x-auto no-scrollbar">
-    {navItems.map((item) => (
+    {menuItems.map((item) => (
       <NavLink
         key={item.path}
         to={item.path}
@@ -88,7 +78,7 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <div className="flex flex-col lg:flex-row min-h-screen bg-slate-50 selection:bg-blue-600 selection:text-white">
-        <DesktopSidebar />
+        <NavigationSidebar />
         <main className="flex-1 p-4 lg:p-12 lg:ml-72 mb-24 lg:mb-0 max-w-7xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />

@@ -8,14 +8,15 @@ export default defineConfig({
   },
   build: {
     outDir: 'dist',
-    minify: 'esbuild', // Usa esbuild che è integrato e più veloce, evitando errori di dipendenze mancanti
+    minify: 'esbuild',
     sourcemap: false,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vendor': ['react', 'react-dom', 'react-router-dom', 'recharts', 'lucide-react']
-        }
+        manualChunks: undefined
       }
     }
+  },
+  server: {
+    port: 3000
   }
 });
