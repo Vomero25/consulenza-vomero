@@ -24,7 +24,7 @@ const DesktopSidebar: React.FC = () => (
       </div>
       <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em]">Advanced Pension Advisor</p>
     </div>
-    <nav className="flex-1 space-y-2">
+    <nav className="flex-1 space-y-2 overflow-y-auto no-scrollbar">
       {navItems.map((item) => (
         <NavLink
           key={item.path}
@@ -37,7 +37,7 @@ const DesktopSidebar: React.FC = () => (
             }`
           }
         >
-          <span className="text-xl group-hover:scale-120 transition-transform">{item.icon}</span>
+          <span className="text-xl group-hover:scale-110 transition-transform">{item.icon}</span>
           <span className="font-bold text-[11px] uppercase tracking-widest">{item.label}</span>
         </NavLink>
       ))}
@@ -61,13 +61,13 @@ const MobileBottomNav: React.FC = () => (
         key={item.path}
         to={item.path}
         className={({ isActive }) =>
-          `flex flex-col items-center gap-1 min-w-[70px] transition-all duration-300 ${
+          `flex flex-col items-center gap-1 min-w-[65px] transition-all duration-300 ${
             isActive ? 'text-blue-500 scale-110' : 'text-slate-500'
           }`
         }
       >
         <span className="text-xl">{item.icon}</span>
-        <span className="text-[9px] font-black uppercase tracking-tighter">{item.label}</span>
+        <span className="text-[8px] font-black uppercase tracking-tighter">{item.label}</span>
       </NavLink>
     ))}
   </nav>
@@ -78,7 +78,7 @@ const App: React.FC = () => {
     <HashRouter>
       <div className="flex flex-col lg:flex-row min-h-screen bg-slate-50 selection:bg-blue-600 selection:text-white">
         <DesktopSidebar />
-        <main className="flex-1 p-5 lg:p-12 lg:ml-72 mb-28 lg:mb-0 max-w-7xl mx-auto w-full">
+        <main className="flex-1 p-4 lg:p-12 lg:ml-72 mb-24 lg:mb-0 max-w-7xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="/market-stats" element={<MarketStats />} />
