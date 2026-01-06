@@ -32,13 +32,13 @@ const Dashboard: React.FC = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-3">
               <div className="bg-blue-600 p-2 rounded-xl"><Zap size={24} className="text-white"/></div>
-              <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] text-blue-400">Gruppo Vomero Intelligence</span>
+              <span className="text-[10px] md:text-[11px] font-black uppercase tracking-[0.4em] text-blue-400">Hub Intelligence Avanzato</span>
             </div>
             <h1 className="text-3xl md:text-5xl font-black italic uppercase tracking-tighter leading-tight">
-              Pension Advisor <span className="text-blue-500">- Gruppo Vomero</span>
+              Gruppo <span className="text-blue-500">Vomero</span>
             </h1>
             <p className="text-slate-400 text-sm font-bold uppercase tracking-widest max-w-xl">
-              Sistema di supporto decisionale d'élite. Editing: Dr. Raffaele Camposano Group Manager.
+              Advanced Pension Advisor & Corporate Audit System. Supervisione: Dr. Raffaele Camposano.
             </p>
           </div>
           <div className="bg-white/5 backdrop-blur-2xl border border-white/10 p-6 md:p-8 rounded-[2rem] border-l-4 border-l-blue-500 w-full lg:w-auto">
@@ -152,7 +152,7 @@ const Dashboard: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer Branding - UPDATED AS REQUESTED */}
+      {/* Footer Branding */}
       <footer className="text-center pt-10 border-t border-slate-200">
         <div className="flex items-center justify-center gap-3 mb-4">
            <ShieldCheck className="text-blue-600" size={20} />

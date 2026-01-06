@@ -20,7 +20,7 @@ const DesktopSidebar: React.FC = () => (
     <div className="mb-12">
       <div className="flex items-center gap-2 mb-2">
         <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center font-black text-white italic">V</div>
-        <h1 className="text-xl font-black tracking-tighter text-white uppercase italic">Vomero <span className="text-blue-500">26</span></h1>
+        <h1 className="text-xl font-black tracking-tighter text-white uppercase italic">Gruppo <span className="text-blue-500">Vomero</span></h1>
       </div>
       <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em]">Advanced Pension Advisor</p>
     </div>
