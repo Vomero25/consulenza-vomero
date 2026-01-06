@@ -7,16 +7,16 @@ import MarketStats from './views/MarketStats';
 import FiscalCalculator from './views/FiscalCalculator';
 import Assistant from './views/Assistant';
 
-const menuItems = [
-  { path: '/', label: 'Dashboard', icon: '🏠' },
-  { path: '/market-stats', label: 'Mercato', icon: '📈' },
-  { path: '/comparison', label: 'Confronto', icon: '⚖️' },
-  { path: '/bilancio-2026', label: 'Legge 2026', icon: '📜' },
-  { path: '/calculator', label: 'Fiscale', icon: '🧮' },
-  { path: '/assistant', label: 'AI Advisor', icon: '🤖' },
+const APP_NAV_ITEMS = [
+  { p: '/', l: 'Dashboard', i: '🏠' },
+  { p: '/market-stats', l: 'Mercato', i: '📈' },
+  { p: '/comparison', l: 'Confronto', i: '⚖️' },
+  { p: '/bilancio-2026', l: 'Legge 2026', i: '📜' },
+  { p: '/calculator', l: 'Fiscale', i: '🧮' },
+  { p: '/assistant', l: 'AI Advisor', i: '🤖' },
 ];
 
-const SidebarLayout = () => (
+const IntegratedSidebar = () => (
   <aside className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
     <div className="mb-12">
       <div className="flex items-center gap-2 mb-2">
@@ -26,10 +26,10 @@ const SidebarLayout = () => (
       <p className="text-[10px] text-slate-500 font-black uppercase tracking-[0.3em]">Advanced Pension Advisor</p>
     </div>
     <nav className="flex-1 space-y-2 overflow-y-auto no-scrollbar">
-      {menuItems.map((item) => (
+      {APP_NAV_ITEMS.map((item) => (
         <NavLink
-          key={item.path}
-          to={item.path}
+          key={item.p}
+          to={item.p}
           className={({ isActive }) =>
             `flex items-center gap-4 px-5 py-3.5 rounded-2xl transition-all duration-300 group ${
               isActive 
@@ -38,8 +38,8 @@ const SidebarLayout = () => (
             }`
           }
         >
-          <span className="text-xl group-hover:scale-110 transition-transform">{item.icon}</span>
-          <span className="font-bold text-[11px] uppercase tracking-widest">{item.label}</span>
+          <span className="text-xl group-hover:scale-110 transition-transform">{item.i}</span>
+          <span className="font-bold text-[11px] uppercase tracking-widest">{item.l}</span>
         </NavLink>
       ))}
     </nav>
@@ -55,20 +55,20 @@ const SidebarLayout = () => (
   </aside>
 );
 
-const MobileNavLayout = () => (
+const IntegratedMobileNav = () => (
   <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-t border-slate-800 flex justify-around items-center px-2 py-4 z-50 shadow-2xl overflow-x-auto no-scrollbar">
-    {menuItems.map((item) => (
+    {APP_NAV_ITEMS.map((item) => (
       <NavLink
-        key={item.path}
-        to={item.path}
+        key={item.p}
+        to={item.p}
         className={({ isActive }) =>
           `flex flex-col items-center gap-1 min-w-[60px] transition-all duration-300 ${
             isActive ? 'text-blue-500 scale-110' : 'text-slate-500'
           }`
         }
       >
-        <span className="text-xl">{item.icon}</span>
-        <span className="text-[8px] font-black uppercase tracking-tighter">{item.label}</span>
+        <span className="text-xl">{item.i}</span>
+        <span className="text-[8px] font-black uppercase tracking-tighter">{item.l}</span>
       </NavLink>
     ))}
   </nav>
@@ -78,7 +78,7 @@ const App: React.FC = () => {
   return (
     <HashRouter>
       <div className="flex flex-col lg:flex-row min-h-screen bg-slate-50 selection:bg-blue-600 selection:text-white">
-        <SidebarLayout />
+        <IntegratedSidebar />
         <main className="flex-1 p-4 lg:p-12 lg:ml-72 mb-24 lg:mb-0 max-w-7xl mx-auto w-full">
           <Routes>
             <Route path="/" element={<Dashboard />} />
@@ -89,7 +89,7 @@ const App: React.FC = () => {
             <Route path="/assistant" element={<Assistant />} />
           </Routes>
         </main>
-        <MobileNavLayout />
+        <IntegratedMobileNav />
       </div>
     </HashRouter>
   );
