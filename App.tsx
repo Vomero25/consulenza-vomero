@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter, Routes, Route, NavLink } from 'react-router-dom';
 import Dashboard from './views/Dashboard';
@@ -7,6 +6,7 @@ import Bilancio2026 from './views/Bilancio2026';
 import MarketStats from './views/MarketStats';
 import FiscalCalculator from './views/FiscalCalculator';
 
+// Definizione item di navigazione (Audit TFR rimosso)
 const navItems = [
   { path: '/', label: 'Dashboard', icon: '🏠' },
   { path: '/market-stats', label: 'Mercato', icon: '📈' },
@@ -15,6 +15,7 @@ const navItems = [
   { path: '/calculator', label: 'Fiscale', icon: '🧮' },
 ];
 
+// Componente Sidebar Desktop integrato per evitare errori di import su Vercel
 const DesktopSidebar: React.FC = () => (
   <div className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
     <div className="mb-12">
@@ -54,6 +55,7 @@ const DesktopSidebar: React.FC = () => (
   </div>
 );
 
+// Navigazione Mobile integrata
 const MobileBottomNav: React.FC = () => (
   <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-t border-slate-800 flex justify-around items-center px-2 py-4 z-50 shadow-2xl overflow-x-auto no-scrollbar">
     {navItems.map((item) => (

@@ -1,4 +1,3 @@
-
 import React, { useMemo } from 'react';
 import { PENSION_DATA } from '../data/pensionData';
 import { MARKET_STATUS_DATA } from '../data/marketStatusData';
@@ -25,7 +24,6 @@ const Dashboard: React.FC = () => {
 
   return (
     <div className="max-w-full mx-auto space-y-6 md:space-y-10 animate-fade-in pb-20">
-      {/* Executive Command Header - GRUPPO VOMERO BRANDING */}
       <header className="bg-slate-950 rounded-[2rem] md:rounded-[3rem] p-8 md:p-12 text-white shadow-2xl relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full -mr-48 -mt-48 blur-3xl animate-pulse"></div>
         <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8">
@@ -56,7 +54,6 @@ const Dashboard: React.FC = () => {
         </div>
       </header>
 
-      {/* Actionable KPIs */}
       <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-white p-8 rounded-[2.5rem] border border-slate-200 shadow-sm group hover:shadow-xl transition-all border-b-4 border-b-blue-600">
           <div className="flex justify-between items-start mb-4">
@@ -89,7 +86,6 @@ const Dashboard: React.FC = () => {
         </div>
       </section>
 
-      {/* Advanced Analytics Grid */}
       <section className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="bg-white p-8 md:p-10 rounded-[2.5rem] border border-slate-200 shadow-sm">
           <div className="flex justify-between items-center mb-10">
@@ -152,7 +148,6 @@ const Dashboard: React.FC = () => {
         </div>
       </section>
 
-      {/* Footer Branding */}
       <footer className="text-center pt-10 border-t border-slate-200">
         <div className="flex items-center justify-center gap-3 mb-4">
            <ShieldCheck className="text-blue-600" size={20} />
