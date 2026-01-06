@@ -6,10 +6,7 @@ import Bilancio2026 from './views/Bilancio2026';
 import MarketStats from './views/MarketStats';
 import FiscalCalculator from './views/FiscalCalculator';
 
-/**
- * CONFIGURAZIONE NAVIGAZIONE
- * La rotta "AUDIT TFR" è stata eliminata definitivamente.
- */
+// 1. Configurazione Voci di Navigazione
 const navItems = [
   { path: '/', label: 'Dashboard', icon: '🏠' },
   { path: '/market-stats', label: 'Mercato', icon: '📈' },
@@ -19,8 +16,8 @@ const navItems = [
 ];
 
 /**
- * COMPONENTE SIDEBAR DESKTOP
- * Definito inline per evitare errori di risoluzione file su Vercel.
+ * COMPONENTE SIDEBAR DESKTOP (INLINE)
+ * Definito qui per garantire che Vercel non cerchi file in cartelle esterne.
  */
 const DesktopSidebar: React.FC = () => (
   <div className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
@@ -62,7 +59,7 @@ const DesktopSidebar: React.FC = () => (
 );
 
 /**
- * COMPONENTE NAVIGAZIONE MOBILE
+ * COMPONENTE NAVIGAZIONE MOBILE (INLINE)
  */
 const MobileBottomNav: React.FC = () => (
   <nav className="lg:hidden fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-2xl border-t border-slate-800 flex justify-around items-center px-2 py-4 z-50 shadow-2xl overflow-x-auto no-scrollbar">
