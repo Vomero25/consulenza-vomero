@@ -5,19 +5,23 @@ import Comparison from './views/Comparison';
 import Bilancio2026 from './views/Bilancio2026';
 import MarketStats from './views/MarketStats';
 import FiscalCalculator from './views/FiscalCalculator';
+import Assistant from './views/Assistant';
 
-// 1. Configurazione Voci di Navigazione
+/**
+ * CONFIGURAZIONE MENU
+ */
 const navItems = [
   { path: '/', label: 'Dashboard', icon: '🏠' },
   { path: '/market-stats', label: 'Mercato', icon: '📈' },
   { path: '/comparison', label: 'Confronto', icon: '⚖️' },
   { path: '/bilancio-2026', label: 'Legge 2026', icon: '📜' },
   { path: '/calculator', label: 'Fiscale', icon: '🧮' },
+  { path: '/assistant', label: 'AI Advisor', icon: '🤖' },
 ];
 
 /**
  * COMPONENTE SIDEBAR DESKTOP (INLINE)
- * Definito qui per garantire che Vercel non cerchi file in cartelle esterne.
+ * Inclusa direttamente per prevenire errori di build su Vercel.
  */
 const DesktopSidebar: React.FC = () => (
   <div className="hidden lg:flex w-72 bg-slate-950 text-white min-h-screen fixed left-0 top-0 p-8 flex-col z-50 border-r border-slate-800">
@@ -68,7 +72,7 @@ const MobileBottomNav: React.FC = () => (
         key={item.path}
         to={item.path}
         className={({ isActive }) =>
-          `flex flex-col items-center gap-1 min-w-[65px] transition-all duration-300 ${
+          `flex flex-col items-center gap-1 min-w-[60px] transition-all duration-300 ${
             isActive ? 'text-blue-500 scale-110' : 'text-slate-500'
           }`
         }
@@ -92,6 +96,7 @@ const App: React.FC = () => {
             <Route path="/comparison" element={<Comparison />} />
             <Route path="/bilancio-2026" element={<Bilancio2026 />} />
             <Route path="/calculator" element={<FiscalCalculator />} />
+            <Route path="/assistant" element={<Assistant />} />
           </Routes>
         </main>
         <MobileBottomNav />

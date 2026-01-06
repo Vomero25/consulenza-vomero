@@ -6,16 +6,14 @@ export default defineConfig({
   define: {
     'process.env.API_KEY': JSON.stringify(process.env.API_KEY)
   },
-  server: {
-    port: 3000
-  },
   build: {
     outDir: 'dist',
+    minify: 'esbuild', // Usa esbuild che è integrato e più veloce, evitando errori di dipendenze mancanti
     sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom', 'recharts', 'lucide-react']
+          'vendor': ['react', 'react-dom', 'react-router-dom', 'recharts', 'lucide-react']
         }
       }
     }
